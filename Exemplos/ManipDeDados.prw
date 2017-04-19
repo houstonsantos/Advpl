@@ -2,7 +2,7 @@
 
 /*/{Protheus.doc} zBanco
 Exemplo de manipulação de Banco de Dados via AdvPL
-@author Atilio
+@author Houston A. Santos
 @since 15/11/2015
 @version 1.0
 @example u_zBanco()

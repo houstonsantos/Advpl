@@ -3,7 +3,7 @@
 /*/{Protheus.doc} zGravacao
 Exemplo de gravasão de dados via RecLock
 @type function
-@author Atilio
+@author Houston A. Santos
 @since 25/11/2015
 @version 1.0
 @example u_zGravacao()

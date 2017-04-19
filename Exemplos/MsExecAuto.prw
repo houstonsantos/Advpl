@@ -4,7 +4,7 @@
 
 /*/{Protheus.doc} zExecAuto
 Exemplo de gravasão via ExecAuto
-@author Atilio
+@author Houston A. Santos
 @since 29/11/2015
 @version 1.0
 @example u_zExecAuto()

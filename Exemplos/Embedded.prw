@@ -2,7 +2,7 @@
 
 /*/{Protheus.doc} zEmbedd
 Exemplo de utilização do Embedded SQL
-@author Atilio
+@author Houston A. Santos
 @since 29/11/2015
 @version 1.0
 @example u_zEmbedd()
