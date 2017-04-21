@@ -1,4 +1,4 @@
-# Advpl a Linguagem.
+# Advpl a Linguagem
 
 A Linguagem AdvPl teve seu início em 1994, sendo na verdade uma evolução na utilização de linguagens no padrão xBase pela Microsiga Software S.A. (Clipper, Visual Objects e depois FiveWin). Com a criação da tecnologia Protheus, era necessário criar uma linguagem que suportasse o padrão xBase para a manutenção de todo o código existente do sistema de ERP Siga Advanced. Foi então criada a linguagem chamada Advanced Protheus Language.
 	
@@ -11,7 +11,7 @@ O compilador e o interpretador da linguagem AdvPl é o próprio servidor AP6 (AP6 
 Os programas em AdvPl podem conter comandos ou funções de interface com o usuário.
 
 
-# A Tecnologia Protheus.
+# A Tecnologia Protheus
 
 O Advanced Protheus é uma nova tecnologia desenvolvida sobre o sistema Advanced, que teve toda a inteligência dividida em duas camadas: Servidor de Aplicação (Protheus Server) e Interface (Remote). Ou seja, uma aplicação 32 bits que se encarrega do gerenciamento das conexões, da execução do código AdvPl e do acesso aos recursos de banco de dados (ADS, Btrieve, CTree ou TopConnect), e uma aplicação thin-client que efetua apenas a interface com o usuário.
 
@@ -19,4 +19,4 @@ O Advanced Protheus é uma nova tecnologia desenvolvida sobre o sistema Advanced,
 # Do Repositório
 
  * Neste repositório você encontra exemplo dos mais diversos, usando funções [ADVPL], para auxiliá lo nos seus estudo da linguagem.
- Estarei contribuindo atulizando e aceitando sugestões, para abordagem dos mais diversos casos.   
+ Estarei atulizando e aceitando sugestões, para abordagem dos mais diversos casos.   
