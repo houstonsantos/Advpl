@@ -41,30 +41,3 @@ User Function zBanco()
 	RestArea(aAreaB1)
 	RestArea(aArea)
 Return
-/*
-O ideal de usar referências:
-Modo Errado:
-	DbSelectArea("SB1")
-	
-	While ! EoF()
-		//Tratamentos para o relatório....
-		
-		DbSelectArea("SB2")
-		//Pega o saldo do produto
-		
-		DbSkip()
-	EndDo
-Modo Certo:
-	DbSelectArea("SB1")
-	DbSelectArea("SB2")
-	
-	//Referencia a tabela de produtos
-	While ! SB1->(EoF())
-		//Tratamentos para o relatório....
-		
-		DbSelectArea("SB2")
-		//Pega o saldo do produto
-		
-		SB1->(DbSkip())
-	EndDo
-*/
