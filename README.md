@@ -14,3 +14,9 @@ Os programas em AdvPl podem conter comandos ou funções de interface com o usuári
 # A Tecnologia Protheus.
 
 O Advanced Protheus é uma nova tecnologia desenvolvida sobre o sistema Advanced, que teve toda a inteligência dividida em duas camadas: Servidor de Aplicação (Protheus Server) e Interface (Remote). Ou seja, uma aplicação 32 bits que se encarrega do gerenciamento das conexões, da execução do código AdvPl e do acesso aos recursos de banco de dados (ADS, Btrieve, CTree ou TopConnect), e uma aplicação thin-client que efetua apenas a interface com o usuário.
+
+
+# Do Repositório
+
+ * Neste repositório você encontra exemplo dos mais diversos, usando funções [ADVPL], para auxiliá lo nos seus estudo da linguagem.
+ Estarei contribuindo atulizando e aceitando sugestões, para abordagem dos mais diversos casos.   
