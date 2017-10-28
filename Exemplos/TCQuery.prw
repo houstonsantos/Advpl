@@ -1,5 +1,5 @@
-#Include "Protheus.ch"
-#Include "TopConn.ch"
+#include "protheus.ch"
+#include "topconn.ch"
 
 #Define STR_PULA		Chr(13) + Chr(10)
 
@@ -12,8 +12,8 @@ Exemplo de manipulação de query via AdvPL
 /*/
 
 User Function zTCQuery()
-	Local aArea	:= GetArea()
-	Local cQuery	:= ""
+	Local aArea	 := GetArea()
+	Local cQuery := ""
 	
 	//Montando a Consulta... Tentem evitar o SELECT * pois isso pode travar o TOPCONN
 	cQuery := " SELECT "							+ STR_PULA

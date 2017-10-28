@@ -1,6 +1,6 @@
-#Include "Protheus.ch"
-#Include "RwMake.ch"
-#Include "TBIConn.ch"
+#include "protheus.ch"
+#include "rwmake.ch"
+#include "tbiconn.ch"
 
 /*/{Protheus.doc} zExecAuto
 Exemplo de gravasão via ExecAuto
@@ -11,11 +11,12 @@ Exemplo de gravasão via ExecAuto
 /*/
 
 User Function zExecAuto()
-	Local aArea	:= GetArea()
-	Local aVetor	:= {}
-	//Private lMSHelpAuto		:= .T.
-	//Private lAutoErrNoFile	:= .T.
-	Private lMsErroAuto			:= .F.
+
+	Local aArea	 := GetArea()
+	Local aVetor := {}
+	//Private lMSHelpAuto	 := .T.
+	//Private lAutoErrNoFile := .T.
+	Private lMsErroAuto		 := .F.
 	
 	//Adicionando dados no produto para testar inclusão
 	aVetor :=	{;

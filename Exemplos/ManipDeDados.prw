@@ -1,4 +1,4 @@
-#Include "Protheus.ch"
+#include "protheus.ch"
 
 /*/{Protheus.doc} zBanco
 Exemplo de manipulação de Banco de Dados via AdvPL
@@ -9,9 +9,10 @@ Exemplo de manipulação de Banco de Dados via AdvPL
 /*/
 
 User Function zBanco()
-	Local aArea		:= GetArea()
-	Local aAreaB1	:= SB1->(GetArea())
-	Local cMens		:= ""
+
+	Local aArea	  := GetArea()
+	Local aAreaB1 := SB1->(GetArea())
+	Local cMens	  := ""
 	
 	//Se a tabela já estiver posicionada
 	If Select("SB1") > 0

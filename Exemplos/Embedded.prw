@@ -1,4 +1,4 @@
-#Include "Protheus.ch"
+#include "protheus.ch"
 
 /*/{Protheus.doc} zEmbedd
 Exemplo de utilização do Embedded SQL

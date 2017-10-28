@@ -1,4 +1,4 @@
-#Include "Protheus.ch"
+#include "protheus.ch"
 
 /*/{Protheus.doc} zGravacao
 Exemplo de gravasão de dados via RecLock
@@ -19,11 +19,11 @@ User Function zGravacao()
 	
 	//Iniciando a transação, tudo dentro da transação, pode ser desarmado (cancelado)
 	Begin Transaction
-		MsgInfo("Antes da AlteraÃ§Ã£o!", "AtenÃ§Ã£o")
+		MsgInfo("Antes da Alteração!", "Atenção")
 		
 		//Se conseguir posicionar no produto de código E00001
 		If SB1->(DbSeek(FWxFilial('SB1') + 'E00001'))
-			//Quando passo .F. no RecLock, o registro Ã© travado para Alteração
+			//Quando passo .F. no RecLock, o registro  travado para Alteração
 			RecLock('SB1', .F.)
 				B1_X_CAMPO := "XXX"
 				B1_DESC := SB1->B1_DESC + "."
