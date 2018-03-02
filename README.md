@@ -28,5 +28,6 @@ Os programas em AdvPl podem conter comandos ou funções de interface com o usuári
      * TCQuery
      * DbSeek
   
- * **Ponto de Entrada** - Usado para fazer acesso a informações e manipulalas em tempo de execução.
+ * **Pontos de Entradas** - Usado para fazer acesso a informações e manipulalas em tempo de execução.
      * F080BENEF
+     * PE01NFESEFAZ
