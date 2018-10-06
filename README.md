@@ -17,7 +17,7 @@
 
 ## Do Repositório
 
- <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; Neste repositório você encontra exemplo dos mais diversos, usando funções **ADVPL**, para auxiliá lo nos seus estudos da linguagem. Estarei atulizando e aceitando sugestões, para abordagem dos mais diversos casos.</p>
+ <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; Neste repositório você encontra exemplo dos mais diversos, usando funções ADVPL, para auxiliá lo nos seus estudos da linguagem.</p>
  
  * **Exemplos** - Funções para manipulação de dados do Banco.
 	 * Embedded
