@@ -6,10 +6,7 @@
 
 <p align="justify">Quando compilados, todos os arquivos de código tornam-se unidades de inteligência básicas, chamados APO´s (de Advanced Protheus Objects). Tais APO´s são mantidos em um repositório e carregados dinamicamente pelo AP6 Server para a execução. Como não existe a linkedição, ou união física do código compilado a um determinado módulo ou aplicação, funções criadas em AdvPl podem ser executadas em qualquer ponto do ambiente Advanced Protheus.</P>
 
-<p align="justify">O compilador e o interpretador da linguagem AdvPl é o próprio servidor AP6 (AP6 Server), e existe um ambiente visual para desenvolvimento integrado (AP6 IDE) onde o código pode ser criado, compilado e depurado.
-
-Os programas em AdvPl podem conter comandos ou funções de interface com o usuário.</p>
-
+<p align="justify">O compilador e o interpretador da linguagem AdvPl é o próprio servidor AP6 (AP6 Server), e existe um ambiente visual para desenvolvimento integrado (AP6 IDE) onde o código pode ser criado, compilado e depurado.</p>
 
 # A Tecnologia Protheus
 
