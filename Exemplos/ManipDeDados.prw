@@ -1,7 +1,7 @@
 #include "protheus.ch"
 
 /*/{Protheus.doc} zBanco
-Exemplo de manipulação de Banco de Dados via AdvPL
+Exemplo de manipulaï¿½ï¿½o de Banco de Dados via AdvPL
 @author Houston A. Santos
 @since 15/11/2015
 @version 1.0
@@ -14,9 +14,9 @@ User Function zBanco()
 	Local aAreaB1 := SB1->(GetArea())
 	Local cMens	  := ""
 	
-	//Se a tabela já estiver posicionada
+	//Se a tabela jï¿½ estiver posicionada
 	If Select("SB1") > 0
-		MsgStop("Tabela SB1 já está aberta!", "Atençãoo")
+		MsgStop("Tabela SB1 jï¿½ estï¿½ aberta!", "Atenï¿½ï¿½oo")
 	EndIf
 	
 	//Selecionando a tabela de produtos
@@ -24,12 +24,12 @@ User Function zBanco()
 	SB1->(DbSetOrder(1)) // B1_FILIAL+B1_COD
 	SB1->(DbGoTop())
 	
-	//Posicionando no produto de código F00002
+	//Posicionando no produto de cï¿½digo F00002
 	If SB1->(DbSeek(FWxFilial("SB1") + "F00002"))
 		Alert(SB1->B1_DESC)
 	EndIf
 	
-	//Agora, percorro todos os registros e adiciono a descrição em uma variável
+	//Agora, percorro todos os registros e adiciono a descriï¿½ï¿½o em uma variï¿½vel
 	SB1->(DbGoTop())
 	While !SB1->(EOF())
 		cMens += Alltrim(SB1->B1_DESC)+";"+Chr(13)+Chr(10)
@@ -37,7 +37,7 @@ User Function zBanco()
 	EndDo
 	
 	//Mostrando a mensagem
-	Aviso('Atenção', cMens, {'OK'}, 03)
+	Aviso('Atenï¿½ï¿½o', cMens, {'OK'}, 03)
 	
 	RestArea(aAreaB1)
 	RestArea(aArea)

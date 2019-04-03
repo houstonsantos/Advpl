@@ -1,7 +1,7 @@
 #include "protheus.ch"
 
 /*/{Protheus.doc} zGravacao
-Exemplo de gravasão de dados via RecLock
+Exemplo de gravasï¿½o de dados via RecLock
 @type function
 @author Houston A. Santos
 @since 25/11/2015
@@ -10,46 +10,47 @@ Exemplo de gravasão de dados via RecLock
 /*/
 
 User Function zGravacao()
+
 	Local aArea := GetArea()
 	
-	//Abrindo a tabela de produtos e setando o Índice
+	// Abrindo a tabela de produtos e setando o ï¿½ndice
 	DbSelectArea('SB1')
-	SB1->(DbSetOrder(1)) //B1_FILIAL + B1_COD
+	SB1->(DbSetOrder(1)) 
 	SB1->(DbGoTop())
 	
-	//Iniciando a transação, tudo dentro da transação, pode ser desarmado (cancelado)
+	// Iniciando a transaï¿½ï¿½o, tudo dentro da transaï¿½ï¿½o, pode ser desarmado (cancelado)
 	Begin Transaction
-		MsgInfo("Antes da Alteração!", "Atenção")
+		MsgInfo("Antes da Alteraï¿½ï¿½o!", "Atenï¿½ï¿½o")
 		
-		//Se conseguir posicionar no produto de código E00001
+		// Se conseguir posicionar no produto de cï¿½digo E00001
 		If SB1->(DbSeek(FWxFilial('SB1') + 'E00001'))
-			//Quando passo .F. no RecLock, o registro  travado para Alteração
+			// Quando passo .F. no RecLock, o registro  travado para Alteraï¿½ï¿½o
 			RecLock('SB1', .F.)
 				B1_X_CAMPO := "XXX"
 				B1_DESC := SB1->B1_DESC + "."
 			SB1->(MsUnlock())
 			
 			/*
-				Ao invés de só utilizar o :=, pode se também utilizar o comando Replace:
+				Ao invï¿½s de sï¿½ utilizar o :=, pode se tambï¿½m utilizar o comando Replace:
 				Replace [CAMPO] With [CONTEUDO]
 				Replace B1_X_CAMPO With "XXX"
 			*/
 		EndIf
 		
-		//Quando passo .T. no RecLock, o registro é travado para Inclusão
+		// Quando passo .T. no RecLock, o registro ï¿½ travado para Inclusï¿½o
 		RecLock('SB1', .T.)
 			B1_FILIAL := FWxFilial('SB1')
 		SB1->(MsUnlock())
 		
-		MsgInfo("Após a Alteração!", "Atenção")
+		MsgInfo("Apï¿½s a Alteraï¿½ï¿½o!", "Atenï¿½ï¿½o")
 		
-		//Ao desarmar a transação, toda a manipulação de dados é cancelada
+		// Ao desarmar a transaï¿½ï¿½o, toda a manipulaï¿½ï¿½o de dados ï¿½ cancelada
 		DisarmTransaction()
 	End Transaction
 	
-	//Se conseguir posicionar no produto de código E00001
+	// Se conseguir posicionar no produto de cï¿½digo E00001
 	If SB1->(DbSeek(FWxFilial('SB1') + 'E00001'))
-		//Quando faço a alteração fora de uma transação, automaticamente os dados são salvos
+		// Quando faï¿½o a alteraï¿½ï¿½o fora de uma transaï¿½ï¿½o, automaticamente os dados sï¿½o salvos
 		RecLock('SB1', .F.)
 			B1_DESC := Alltrim(SB1->B1_DESC) + "."
 		SB1->(MsUnlock())

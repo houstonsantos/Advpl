@@ -1,7 +1,7 @@
 #include "protheus.ch"
 
 /*/{Protheus.doc} zEmbedd
-Exemplo de utilização do Embedded SQL
+Exemplo de utilizaï¿½ï¿½o do Embedded SQL
 @author Houston A. Santos
 @since 29/11/2015
 @version 1.0
@@ -9,12 +9,12 @@ Exemplo de utilização do Embedded SQL
 /*/
 
 User Function zEmbedd()
+
 	Local aArea := GetArea()
 	
-	//Construindo a consulta
+	// Construindo a consulta
 	BeginSql Alias "SQL_SB1"
-	
-		//COLUMN F3_ENTRADA AS DATE //Deve se usar isso para transformar o campo em data  
+	 
 		Select	
 			B1_COD,
 			B1_DESC
@@ -25,7 +25,7 @@ User Function zEmbedd()
 			AND B1_MSBLQL != '1'			
 	EndSql   
 	
-	//Percorrendo os registros
+	// Percorrendo os registros
 	While ! SQL_SB1->(EOF())
 		ConOut("# SQL_SB1: " + SQL_SB1->B1_COD + "|" + SQL_SB1->B1_DESC)
 		SQL_SB1->(DbSkip())

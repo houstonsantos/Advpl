@@ -4,7 +4,7 @@
 #Define STR_PULA		Chr(13) + Chr(10)
 
 /*/{Protheus.doc} zTCQuery
-Exemplo de manipulação de query via AdvPL
+Exemplo de manipulaï¿½ï¿½o de query via AdvPL
 @author Houston A. Santos
 @since 29/11/2015
 @version 1.0
@@ -12,10 +12,11 @@ Exemplo de manipulação de query via AdvPL
 /*/
 
 User Function zTCQuery()
+
 	Local aArea	 := GetArea()
 	Local cQuery := ""
 	
-	//Montando a Consulta... Tentem evitar o SELECT * pois isso pode travar o TOPCONN
+	// Montando a Consulta... Tentem evitar o SELECT * pois isso pode travar o TOPCONN
 	cQuery := " SELECT "							+ STR_PULA
 	cQuery += "   B1_COD AS CODIGO, "				+ STR_PULA
 	cQuery += "   B1_DESC AS DESCRI "				+ STR_PULA
@@ -26,11 +27,10 @@ User Function zTCQuery()
 	cQuery += "   AND B1_MSBLQL != '1' "			+ STR_PULA
 	cQuery := ChangeQuery(cQuery)
 	
-	//Executando consulta
+	// Executando consulta
 	TCQuery cQuery New Alias "QRY_SB1"
-	//TCSetField('QRY_SB1', 'CAMPO_DATA', 'D')
 	
-	//Percorrendo os registros
+	// Percorrendo os registros
 	While ! QRY_SB1->(EOF())
 		ConOut("> QRY_SB1: " + QRY_SB1->CODIGO + "|" + QRY_SB1->DESCRI)
 		QRY_SB1->(DbSkip())
