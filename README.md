@@ -8,9 +8,6 @@
 
 <p align="justify">O compilador e o interpretador da linguagem AdvPl é o próprio servidor AP6 (AP6 Server), e existe um ambiente visual para desenvolvimento integrado (AP6 IDE) onde o código pode ser criado, compilado e depurado.</p>
 
-# A Tecnologia Protheus
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; O Advanced Protheus é uma nova tecnologia desenvolvida sobre o sistema Advanced, que teve toda a inteligência dividida em duas camadas: Servidor de Aplicação (Protheus Server) e Interface (Remote). Ou seja, uma aplicação 32 bits que se encarrega do gerenciamento das conexões, da execução do código AdvPl e do acesso aos recursos de banco de dados (ADS, Btrieve, CTree ou TopConnect), e uma aplicação thin-client que efetua apenas a interface com o usuário.</p>
 
 ## Do Repositório
 
