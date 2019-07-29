@@ -1,6 +1,6 @@
 # Advpl 
 
- <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; Neste repositório compartilho um pouco da minha experiência como Analista, Desenvolvedor e Coordenador com o <b>AdvPL</b> da <b>TOTVS</b>, maior sistema ERP da América Latina, você encontra exemplo dos mais diversos, usando funções, classes e MVC,para auxiliar estudos da linguagem e analistas que buscam soluções.</p>
+ <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; Neste repositório compartilho um pouco da minha experiência como Analista, Desenvolvedor e Coordenador com o <b>AdvPL</b> da <b>TOTVS</b>, maior sistema ERP da América Latina, você encontrará exemplo dos mais diversos, usando funções, classes e MVC, para auxiliar estudos da linguagem e analistas que buscam soluções.</p>
  
  * **Exemplos** - Funções para manipulação de dados do Banco.
 	 * Embedded
