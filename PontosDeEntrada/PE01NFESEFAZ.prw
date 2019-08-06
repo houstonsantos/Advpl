@@ -7,7 +7,7 @@
 /*/{Protheus.doc} PE01NFESEFAZ
     (Ponto de Entrada para manipulação do xml da nota)
     @type  Function
-    @author Houston Santos, Lailson Santos 
+    @author Houston Santos
     @since 02/10/2013
     @version version
 	@param param
@@ -59,7 +59,7 @@ Return aRetorno
 /*/{Protheus.doc} PE01NFESEFAZ
     (Manipulação das informações complementares.)
     @type  Function
-    @author Alexandre Gomes, Lailson Santos, Houston Santos
+    @author Houston Santos
     @since 02/10/2013
     @version version
 	@param cMensCli, aProd
