@@ -1,44 +1,41 @@
 #include "protheus.ch"
 
-/*/{Protheus.doc} zBanco
-Exemplo de manipulaï¿½ï¿½o de Banco de Dados via AdvPL
+/*/{Protheus.doc} ManiBan
+Exemplo de manipulação de Banco de Dados via AdvPL
 @author Houston A. Santos
 @since 15/11/2015
 @version 1.0
-@example u_zBanco()
+@example u_ManiBan()
 /*/
 
-User Function zBanco()
+User Function ManiBan()
 
 	Local aArea	  := GetArea()
-	Local aAreaB1 := SB1->(GetArea())
+	Local aAreaA1 := SA1->(GetArea())
 	Local cMens	  := ""
 	
-	//Se a tabela jï¿½ estiver posicionada
-	If Select("SB1") > 0
-		MsgStop("Tabela SB1 jï¿½ estï¿½ aberta!", "Atenï¿½ï¿½oo")
+	// Verifica se a tabela já está aberta.
+	If Select("SA1") > 0
+		MsgStop("Tabela SA1 já está aberta!", "Atenção")
 	EndIf
 	
-	//Selecionando a tabela de produtos
-	DbSelectArea("SB1")
-	SB1->(DbSetOrder(1)) // B1_FILIAL+B1_COD
-	SB1->(DbGoTop())
+	// Selecionando a tabela de cleentes.
+	DbSelectArea("SA1")
+	SA1->(DbSetOrder(1))
+	SA1->(DbGoTop())
 	
-	//Posicionando no produto de cï¿½digo F00002
-	If SB1->(DbSeek(FWxFilial("SB1") + "F00002"))
-		Alert(SB1->B1_DESC)
+	// Posicionando no cliente 0000001.
+	If SA1->(DbSeek(FWxFilial("SA1") + "000001"))
+		Alert(SA1->A1_DESC)
 	EndIf
 	
-	//Agora, percorro todos os registros e adiciono a descriï¿½ï¿½o em uma variï¿½vel
-	SB1->(DbGoTop())
-	While !SB1->(EOF())
-		cMens += Alltrim(SB1->B1_DESC)+";"+Chr(13)+Chr(10)
-		SB1->(DbSkip())
+	// Percorrendo alias.
+	SA1->(DbGoTop())
+	While ! SA1->(EOF())
+		Alert(SA1->A1_NOME)
+		SA1->(DbSkip())
 	EndDo
 	
-	//Mostrando a mensagem
-	Aviso('Atenï¿½ï¿½o', cMens, {'OK'}, 03)
-	
-	RestArea(aAreaB1)
+	RestArea(aAreaA1)
 	RestArea(aArea)
 Return

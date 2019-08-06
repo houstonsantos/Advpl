@@ -1,36 +1,36 @@
 #include "protheus.ch"
 
-/*/{Protheus.doc} zEmbedd
-Exemplo de utilizaï¿½ï¿½o do Embedded SQL
+/*/{Protheus.doc} EmbSql
+Exemplo de utilização do Embedded SQL
 @author Houston A. Santos
 @since 29/11/2015
 @version 1.0
 @example u_zEmbedd()
 /*/
 
-User Function zEmbedd()
+User Function EmbSql()
 
 	Local aArea := GetArea()
 	
 	// Construindo a consulta
-	BeginSql Alias "SQL_SB1"
+	BeginSql Alias "SQL_SA1"
 	 
 		Select	
-			B1_COD,
-			B1_DESC
+			A1_COD,
+			A1_DESC
 		FROM
-			%table:SB1% SB1 
+			%table:SA1% SA1 
 		WHERE
-			SB1.%notDel%
-			AND B1_MSBLQL != '1'			
+			SA1.%notDel%
+			AND A1_MSBLQL != '1'			
 	EndSql   
 	
 	// Percorrendo os registros
-	While ! SQL_SB1->(EOF())
-		ConOut("# SQL_SB1: " + SQL_SB1->B1_COD + "|" + SQL_SB1->B1_DESC)
-		SQL_SB1->(DbSkip())
+	While ! SQL_SA1->(EOF())
+		ConOut("SQL_SA1: " + SQL_SA1->A1_COD + " " + SQL_SA1->A1_DESC)
+		SQL_SA1->(DbSkip())
 	EndDo
 	
-	SQL_SB1->(DbCloseArea())
+	SQL_SA1->(DbCloseArea())
 	RestArea(aArea)
 Return

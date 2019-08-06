@@ -1,59 +1,28 @@
 #include "protheus.ch"
 
-/*/{Protheus.doc} zGravacao
-Exemplo de gravasï¿½o de dados via RecLock
+/*/{Protheus.doc} GraRec
+Exemplo de gravação de dados com RecLock
 @type function
 @author Houston A. Santos
 @since 25/11/2015
 @version 1.0
-@example u_zGravacao()
+@example u_GraRec()
 /*/
 
-User Function zGravacao()
+User Function GraRec()
 
 	Local aArea := GetArea()
+	// Abrindo a tabela de cliente.
+	DbSelectArea('SA1')
+	SA1->(DbSetOrder(1)) 
+	SA1->(DbGoTop())
 	
-	// Abrindo a tabela de produtos e setando o ï¿½ndice
-	DbSelectArea('SB1')
-	SB1->(DbSetOrder(1)) 
-	SB1->(DbGoTop())
-	
-	// Iniciando a transaï¿½ï¿½o, tudo dentro da transaï¿½ï¿½o, pode ser desarmado (cancelado)
-	Begin Transaction
-		MsgInfo("Antes da Alteraï¿½ï¿½o!", "Atenï¿½ï¿½o")
-		
-		// Se conseguir posicionar no produto de cï¿½digo E00001
-		If SB1->(DbSeek(FWxFilial('SB1') + 'E00001'))
-			// Quando passo .F. no RecLock, o registro  travado para Alteraï¿½ï¿½o
-			RecLock('SB1', .F.)
-				B1_X_CAMPO := "XXX"
-				B1_DESC := SB1->B1_DESC + "."
-			SB1->(MsUnlock())
-			
-			/*
-				Ao invï¿½s de sï¿½ utilizar o :=, pode se tambï¿½m utilizar o comando Replace:
-				Replace [CAMPO] With [CONTEUDO]
-				Replace B1_X_CAMPO With "XXX"
-			*/
-		EndIf
-		
-		// Quando passo .T. no RecLock, o registro ï¿½ travado para Inclusï¿½o
-		RecLock('SB1', .T.)
-			B1_FILIAL := FWxFilial('SB1')
-		SB1->(MsUnlock())
-		
-		MsgInfo("Apï¿½s a Alteraï¿½ï¿½o!", "Atenï¿½ï¿½o")
-		
-		// Ao desarmar a transaï¿½ï¿½o, toda a manipulaï¿½ï¿½o de dados ï¿½ cancelada
-		DisarmTransaction()
-	End Transaction
-	
-	// Se conseguir posicionar no produto de cï¿½digo E00001
-	If SB1->(DbSeek(FWxFilial('SB1') + 'E00001'))
-		// Quando faï¿½o a alteraï¿½ï¿½o fora de uma transaï¿½ï¿½o, automaticamente os dados sï¿½o salvos
-		RecLock('SB1', .F.)
-			B1_DESC := Alltrim(SB1->B1_DESC) + "."
-		SB1->(MsUnlock())
+	// Se conseguir posicionar no produto 000001.
+	If SA1->(DbSeek(FWxFilial('SA1') + '000001'))
+		// Quando passo .F. no RecLock, o registro fica travado para Alteração e .T. para inclusão.
+		RecLock('SA1', .F.)
+			A1_DESC := "NOME_AQUI"
+		SA1->(MsUnlock())
 	EndIf
 	
 	RestArea(aArea)
